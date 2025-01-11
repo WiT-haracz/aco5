@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      - PORT=8080
+      - APP_NAME=app
+    # Note: config file should be mounted at runtime to /app/config/config.js
+    restart: unless-stopped
